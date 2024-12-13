@@ -1,0 +1,36 @@
+.slot {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.available {
+    background-color: #e6f7ff;
+}
+
+.occupied {
+    background-color: #fff1f0;
+}
+
+.slotId {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-size: 14px;
+    color: #666;
+}
+
+.available .status {
+    color: #52c41a;
+}
+
+.occupied .status {
+    color: #f5222d;
+}
