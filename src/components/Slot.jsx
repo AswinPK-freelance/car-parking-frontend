@@ -22,9 +22,12 @@ const Slot = ({ id, occupied, name, enteringTime, getFun }) => {
       const response = await ApiCall("post", endParkingUrl, { slot: id });
       if (response?.status) {
         console.log(response);
-        const minutes =
-          (response?.message?.data?.parkedDuration).toFixed(2) ?? 0;
-        window.alert(`Your charge for ${minutes} Minutes is ${minutes * 5} Rs`);
+        const minutes = (
+          parseFloat(response?.message?.data?.parkedDuration) || 0
+        ).toFixed(2);
+        const charge = (parseFloat(minutes) * 5).toFixed(2);
+        window.alert(`Your charge for ${minutes} Minutes is ${charge} Rs`);
+
         getFun();
       }
     }
